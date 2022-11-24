@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".views.AddTasteInfor.MapActivity">
+<LinearLayout
+    android:id="@+id/li"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <AutoCompleteTextView
+        android:id="@+id/autoCompleteTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:scrollbars="horizontal|vertical"
+        android:hint="맛집이나 주소를 입력하세요"
+        android:focusable="true"
+        android:layout_weight="1"
+        android:focusableInTouchMode="true"
+        android:dropDownHeight = "200dp"/>
+
+    <ImageView
+        android:id="@+id/clear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_dialog_close_light"
+        android:layout_gravity="center"
+       />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/select"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/li"
+        android:src="@drawable/powered_by_google_light" />
+
+
+    <LinearLayout
+        android:layout_below="@+id/select"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <fragment
+            android:id="@+id/map"
+            class="com.google.android.gms.maps.MapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <TextView
+            android:layout_weight="4"
+            android:id="@+id/name"
+            android:maxLines="2"
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:textColorHint="@android:color/holo_red_light"
+            android:hint="마커의 상세주소를 눌러주세요" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+        <Button
+           android:text="주변장소"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:layout_weight="3"
+           android:layout_margin="5dp"
+           android:id="@+id/button"/>
+        <Button
+            android:text="맛집선택"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:layout_margin="5dp"
+            android:id="@+id/button2"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

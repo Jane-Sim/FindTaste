@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.constraint.ConstraintLayout
+            android:visibility="gone"
+            android:id="@+id/friendChatLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/friendImgView"
+                android:layout_marginLeft="@dimen/dp8"
+                android:layout_marginTop="@dimen/dp8"
+                android:layout_marginRight="@dimen/dp8"
+                android:src="@drawable/com_facebook_profile_picture_blank_portrait"
+                android:scaleType="centerInside"
+                android:contentDescription="@string/app_name"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/txtParentLayout"
+                android:layout_width="48dp"
+                android:layout_height="48dp" />
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/txtParentLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingRight="50dp"
+                android:layout_marginRight="20dp"
+                app:layout_constraintTop_toTopOf="@+id/friendChatLayout"
+                app:layout_constraintStart_toEndOf="@id/friendImgView"
+                app:layout_constraintEnd_toEndOf="@+id/friendChatLayout"
+                android:layout_marginTop="@dimen/dp8"
+               >
+                <TextView
+                    tools:text="닉네임"
+                    android:id="@+id/friendname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:text="asfsdfsdf"
+                    android:background="@drawable/friend_chat"
+                    android:id="@+id/friendMsgTxtView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/friendname"
+                    />
+
+                <TextView
+                    android:id="@+id/timefriend"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/friendMsgTxtView"
+                    tools:text="오전 07: 16" />
+            </android.support.constraint.ConstraintLayout>
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:visibility="gone"
+            android:id="@+id/myChatLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/myParent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp8"
+                android:paddingLeft="50dp"
+                android:layout_marginLeft="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/myChatLayout">
+
+                <TextView
+                    android:id="@+id/myMsgTxtView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/my_chat"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:text="jkfsladadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadadada" />
+
+                <TextView
+                    android:id="@+id/timemy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:text="오전 07: 16"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/myMsgTxtView" />
+            </android.support.constraint.ConstraintLayout>
+
+        </android.support.constraint.ConstraintLayout>
+    </android.support.constraint.ConstraintLayout>
+</layout>

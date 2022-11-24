@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--FindTaste 어플의 권한설정과 액티비티들을 적어놓은 매니페스트입니다.-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.seyoung.findtaste">
+    <!--사용자의 위치를 받아오게 하는 GPS퍼미션-->
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <!--사용자의 인터넷 유무를 알려줄  퍼미션-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <!--사용자의 사진을 불러오고 카메라로 찍은 사진을 저장하게끔 해주는 퍼미션 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!--사용자가 오디오를 듣도록 해주는 퍼미션-->
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <!--opencv로 카메라를 찍을 때, 전면카메라와 후면 카메라를 사용하게 끔 설정하는 퍼미션-->
+    <uses-feature android:name="android.hardware.camera" android:required="false"
+        tools:targetApi="eclair" />
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false"
+        tools:targetApi="eclair" />
+    <uses-feature android:name="android.hardware.camera.front" android:required="false"
+        tools:targetApi="eclair" />
+    <uses-feature android:name="android.hardware.camera.front.autofocus"  android:required="false"
+        tools:targetApi="eclair" />
+    <!--opengl 2버전을 사용하기 위한 퍼미션-->
+    <uses-feature android:glEsVersion="0x00020000" android:required="true" />
+    <!--사용자의 GPS가 아닌 위치 정보를 받는 퍼미션-->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!--와이파이 상태 퍼미션-->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!--전화 퍼미션-->
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.DIAL_PHONE" />
+
+    <!-- opencv를 사용할 때 풀 스크린으로 사용할 수 있도록 설정합니다. -->
+    <supports-screens android:resizeable="true"
+        android:smallScreens="true"
+        android:normalScreens="true"
+        android:largeScreens="true"
+        android:anyDensity="true"
+        tools:targetApi="donut" />
+
+    <application
+        android:allowBackup="false"
+        android:icon="@mipmap/wm"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/wm"
+        android:supportsRtl="true"
+        android:windowSoftInputMode="stateAlwaysHidden"
+        android:theme="@style/AppTheme"
+        android:largeHeap="true"
+        tools:targetApi="honeycomb"
+        tools:ignore="RtlEnabled">
+
+        <!--페이스북 회원가입과 로그인을 하기 위한 설정입니다.
+        개발자의 facebook 코드지정.-->
+        <meta-data android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id"/>
+        <provider
+            android:authorities="com.facebook.app.FacebookContentProvider371228663310192"
+            android:name="com.facebook.FacebookContentProvider"
+            android:exported="true"/>
+
+        <!--구글 맵과 플레이스를 사용하기 위한 설정입니다.-->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDVD8E0DgHoiZeOKvRv1i3CiJykrvy1t0Y"/>
+
+        <!--카카오톡 메세지 링크를 사용하기 위한 설정입니다.-->
+        <meta-data
+            android:name="com.kakao.sdk.AppKey"
+            android:value="@string/kakao_app_key" />
+
+        <!--사용자가 처음 어픓에 들어올 때 보이는 인덱스화면-->
+        <activity android:name=".views.LoginNRegister.IndexActivity" android:theme="@android:style/Theme.NoTitleBar"
+            tools:ignore="InnerclassSeparator">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!--사용자가 로딩 화면 후 보이는 로그인 화면입니다.-->
+        <activity android:name=".views.LoginNRegister.LoginActivity" tools:ignore="InnerclassSeparator" />
+
+        <!-- 회원가입 화면-->
+        <activity android:name=".views.LoginNRegister.SignUpActivity"
+        tools:ignore="InnerclassSeparator"/>
+
+        <!--사용자가 로그인을 한 후 보이는 메인화면입니다.-->
+        <activity android:name=".views.MainFragment.MainActivity" android:theme="@android:style/Theme.NoTitleBar"
+        tools:ignore="InnerclassSeparator"/>
+
+        <!--사용자가 맛집을 등록할 때 등록화면-->
+        <activity android:name=".views.AddTasteInfor.AddtasteActivity" tools:ignore="InnerclassSeparator"/>
+
+        <!--등록하고자 하는 식당을 지도에서 찾고자 할 때, 보여주는 지도화면-->
+        <activity android:name=".views.AddTasteInfor.MapActivity" tools:ignore="InnerclassSeparator"/>
+
+        <!--등록한 맛집의 상세정보 화면-->
+        <activity android:name=".views.SeeTasteInfo.seeTasteActivity" tools:ignore="InnerclassSeparator">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="@string/kakao_scheme"
+                    android:host="@string/kakaolink_host" />
+            </intent-filter>
+        </activity>
+
+        <!--사용자가 등록한 맛집을 찾을 때, 검색한 맛집의 결과값을 보여주는 화면-->
+        <activity android:name=".views.SearcheTaste.TasteResponse" tools:ignore="InnerclassSeparator" />
+
+        <!--등록한 맛집을 지도에서 찾고자 할 때, 보여주는 지도화면-->
+        <activity android:name=".views.SearcheTaste.SearchmapsActivity" tools:ignore="InnerclassSeparator" />
+
+        <!--사용자가 원하는 맛집의 리뷰를 달고자 할 때 사용하는 리뷰메인화면-->
+        <activity android:name=".views.WriteReview.ReviewActivity" tools:ignore="InnerclassSeparator" />
+
+        <!--원하는 리뷰에 댓글을 달고자 할 때 사용하는 리뷰 상세화면의 댓글 추가 화면-->
+        <activity android:name=".views.WriteReview.ReviewComment" android:windowSoftInputMode="adjustPan" tools:ignore="InnerclassSeparator" />
+
+        <!--사용자의 정보를 수정하는 화면-->
+        <activity android:name=".views.Activity_ProfileFix" />
+
+        <!--채팅의 메인화면-->
+        <activity android:name=".views.ChatView.ChatMainActivity" tools:ignore="InnerclassSeparator" />
+
+        <!--채팅방 화면-->
+        <activity android:name=".views.ChatView.ChatRoomActivity"  tools:ignore="InnerclassSeparator" />
+
+        <!--원하는 유저를 추가하는 친구추가화면-->
+        <activity android:name=".views.ChatView.ChatAddFriendActivity" tools:ignore="InnerclassSeparator" />
+
+        <!--사용자가 프로필 사진을 변경할 때, 불러오는 얼굴인식 카메라-->
+        <activity android:name=".views.MainFragment.opencv"
+            android:screenOrientation="landscape"
+            android:configChanges="keyboardHidden|orientation"
+            tools:ignore="InnerclassSeparator" />
+
+        <!--얼굴인식에서 가져온 사진을 필터처리하는 화면-->
+        <activity android:name=".views.opengl.ActivityFilter"  android:screenOrientation="landscape"/>
+
+        <!--맛집의 상세정보의 사진을 페이스북에 올릴 때 사용하는 페이스북 화면-->
+        <activity android:name="com.facebook.FacebookActivity"
+            android:configChanges=
+                "keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name" />
+
+        <!--페이스북의 버튼의 내용을 변경헐 수 있도록 만들어주는 커스텀 액티비티-->
+        <activity
+            android:name="com.facebook.CustomTabActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="@string/fb_login_protocol_scheme" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".util.FacetimeActivity"
+            android:label="@string/app_name"
+            android:windowSoftInputMode="adjustPan"
+            >
+<!--            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>-->
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+
+                <data
+                    android:scheme="https"
+                    android:host="appr.tc"
+                    />
+                <data
+                    android:scheme="http"
+                    android:host="appr.tc"
+                    />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".util.SettingsActivity"
+            android:label="@string/settings_name"
+            >
+        </activity>
+
+        <activity
+            android:name=".util.CallActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="fullUser"
+            android:configChanges="orientation|screenSize"
+            android:theme="@style/CallActivityTheme"
+            >
+        </activity>
+
+        <activity
+            android:name=".util.wait_facetime"/>
+
+        <!--앱이 꺼져도 채팅을 받을 수 있도록 해주는 서비스-->
+        <service
+            android:name=".views.ChatView.MyService" tools:ignore="ExportedService,InnerclassSeparator"
+            android:exported="true"
+            android:permission="" />
+
+    </application>
+
+</manifest>

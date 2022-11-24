@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:contentDescription="@string/app_name"
+            android:id="@+id/profileImgView"
+            android:layout_width="@dimen/dp64"
+            android:layout_height="@dimen/dp64"
+            android:padding="@dimen/dp8"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_people_black_24dp"
+
+            app:layout_constraintEnd_toStartOf="@+id/userNameTv"/>
+        <TextView
+            app:layout_constraintStart_toEndOf="@+id/profileImgView"
+            app:layout_constraintEnd_toStartOf="@+id/profileMsgTv"
+            android:paddingStart="@dimen/dp16"
+            android:paddingEnd="0dp"
+            android:id="@+id/userNameTv"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp64"
+            android:gravity="center|start"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            tools:text="name" />
+        <TextView
+            android:id="@+id/profileMsgTv"
+            android:layout_width="match_parent"
+            android:gravity="center|end"
+            android:paddingStart="0dp"
+            android:paddingEnd="@dimen/dp16"
+            android:layout_height="@dimen/dp64"
+            app:layout_constraintStart_toEndOf="@+id/userNameTv"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <Button
+            android:id="@+id/connect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/chatting"
+            android:layout_marginRight="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/chatting"
+            android:visibility="gone"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/userNameTv" />
+    </android.support.constraint.ConstraintLayout>
+</layout>

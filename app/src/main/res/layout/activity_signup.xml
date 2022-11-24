@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/signup"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
+    android:background="@drawable/logo"
+    android:focusable="true">
+
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp">
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="1">
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginRight="10dp"
+                    android:visibility="visible"
+                    android:src="@android:drawable/sym_action_chat"/>
+
+                <EditText
+                    android:id="@+id/user_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:imeOptions="actionNext"
+                    android:nextFocusDown="@id/user_name"
+                    android:hint="아이디 6~12자리"
+                    android:inputType="textVisiblePassword"
+                    android:maxLength="12"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@android:color/white" />
+
+            </LinearLayout>
+            <TextView
+                android:id="@+id/Oktext"
+                android:layout_width="match_parent"
+                android:layout_height="18dp"
+                android:textSize="13sp"
+                android:textColor="@android:color/darker_gray"
+                android:text="영문와 숫자를 같이 넣으세요"
+                android:layout_marginLeft="40dp"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:focusableInTouchMode="true">
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginRight="10dp"
+                android:visibility="visible"
+                android:src="@android:drawable/ic_menu_myplaces" />
+
+            <EditText
+                android:id="@+id/user_name"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:inputType="text"
+                android:hint="닉네임 1자~10자리"
+                android:maxLength="10"
+                android:textColor="@android:color/white"
+                android:textColorHint="@android:color/white" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:focusableInTouchMode="true">
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginRight="10dp"
+                android:visibility="visible"
+                android:src="@android:drawable/ic_lock_lock"
+                />
+
+            <EditText
+                android:id="@+id/user_passWord"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="50dp"
+                android:hint="비밀번호 6~14자리"
+                android:inputType="textPassword"
+                android:maxLength="14"
+                android:textColor="@android:color/white"
+                android:textColorHint="@android:color/white" />
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="18dp"
+            android:textSize="15sp"
+            android:textColor="@android:color/darker_gray"
+            android:text="영문+숫자+특수문자"
+            android:layout_marginLeft="70dp"
+            android:layout_marginRight="30dp"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:focusableInTouchMode="true">
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginRight="10dp"
+                android:src="@android:drawable/ic_lock_lock" />
+            <EditText
+                android:id="@+id/user_passWordAgain"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:imeOptions="actionDone"
+                android:hint="비밀번호 확인"
+                android:inputType="textPassword"
+                android:textColor="@android:color/white"
+                android:maxLength="14"
+                android:textColorHint="@android:color/white" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:focusableInTouchMode="true">
+        </LinearLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true">
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:layout_height="50dp"
+            android:background="@android:color/darker_gray"
+            android:gravity="left"
+
+            android:padding="10dp"
+            android:text="회원가입"
+
+            android:textColor="@android:color/background_light"
+            android:textSize="20sp" />
+        <Button
+            android:id="@+id/btn_agreeJoin"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_weight="0"
+            android:background="@android:color/background_light"
+            android:onClick="onClick"
+            android:text="sign up"
+            android:textSize="20sp" />
+    </LinearLayout>
+</RelativeLayout>

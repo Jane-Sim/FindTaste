@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/cardview_light_background"
+    >
+    <LinearLayout
+        android:id="@+id/up"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="false"
+        android:layout_alignParentStart="true"
+        >
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:layout_height="50dp"
+            android:background="@android:color/holo_red_light"
+            android:gravity="center"
+
+            android:padding="10dp"
+            android:text="맛집 등록"
+
+            android:textColor="@android:color/background_light"
+            android:textSize="20sp" />
+
+
+    </LinearLayout>
+    <ScrollView
+        android:id="@+id/down"
+        android:layout_below="@+id/up"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/Map"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginRight="4dp"
+                    android:elevation="4dp"
+                    android:padding="8dp"
+                    android:scaleType="fitCenter"
+                    android:src="@android:drawable/ic_menu_mapmode" />
+
+                <TextView
+                    android:id="@+id/MapText"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="4dp"
+                    android:layout_weight="5"
+                    android:gravity="center_vertical"
+                    android:text="지도에서 선택하기" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="*식당 이름 (예:테이스트집)"
+                android:textColor="@android:color/holo_red_dark"
+                />
+
+            <EditText
+                android:id="@+id/foodname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:gravity="start"
+                android:hint="이름을 적어주세요"
+                android:maxLength="20"
+                android:maxLines="1"
+                android:padding="10dp"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="*지역 및 위치 선택"
+                android:textColor="@android:color/holo_red_dark" />
+
+            <EditText
+                android:id="@+id/foodaddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+
+                android:gravity="start"
+                android:hint="주소를 적어주세요"
+                android:maxLines="1"
+                android:padding="10dp"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/foodtel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+
+                android:gravity="start"
+                android:hint="전화번호 (예: 02-123-4567)"
+                android:inputType="phone"
+                android:maxLength="13"
+                android:maxLines="1"
+                android:padding="10dp"
+                android:textSize="12sp" />
+
+            <LinearLayout
+                android:id="@+id/current_text_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:gravity="end"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:text="글자수"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/current_length"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/text_max_length"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="/100"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+            <EditText
+                android:id="@+id/fooddescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:fadeScrollbars="false"
+                android:gravity="start"
+                android:hint="상세내용"
+                android:lines="9"
+                android:maxLength="500"
+                android:overScrollMode="always"
+                android:padding="5dp"
+                android:scrollbarStyle="insideInset"
+                android:scrollbars="vertical"
+                android:textSize="12sp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/image_choice"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_gravity=""
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginRight="4dp"
+                    android:elevation="4dp"
+                    android:padding="8dp"
+                    android:scaleType="fitCenter"
+                    android:src="@android:drawable/ic_menu_camera" />
+
+                <TextView
+                    android:id="@+id/pick"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="사진 선택" />
+            </LinearLayout>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="200dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/image1"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:background="@android:color/black"
+                        android:scaleType="centerCrop"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/image2"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:background="@android:color/black"
+                        android:scaleType="centerCrop"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/image3"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:background="@android:color/black"
+                        android:scaleType="centerCrop"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/image4"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:background="@android:color/black"
+                        android:scaleType="centerCrop"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/image5"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:background="@android:color/black"
+                        android:scaleType="centerCrop"
+                        android:visibility="gone" />
+                </LinearLayout>
+            </HorizontalScrollView>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_alignParentStart="true"
+    android:background="@android:color/background_light">
+    <Button
+        android:id="@+id/complete"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textColor="@android:color/background_light"
+        android:text="추가하기"
+        android:textSize="20sp" />
+</LinearLayout>
+
+</RelativeLayout>

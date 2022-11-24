@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:facebook="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/foodlogo">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="130dp"
+        android:layout_weight="0">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/IdText"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/round"
+            android:hint="아이디"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:textColorHint="@android:color/white"
+            android:inputType="textVisiblePassword"
+            android:padding="5dp"
+            android:paddingLeft="10dp" />
+
+        <EditText
+            android:id="@+id/PasswordText"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="50dp"
+            android:background="@drawable/round"
+            android:hint="비밀번호"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:textColorHint="@android:color/white"
+            android:inputType="textPassword"
+            android:padding="5dp"
+            android:paddingLeft="10dp" />
+
+        <Button
+            android:id="@+id/loginbutton"
+            android:layout_width="100dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="60dp"
+            android:background="@drawable/button"
+            android:onClick="onClick"
+            android:text="로그인"
+            />
+
+            <com.facebook.login.widget.LoginButton
+                android:id="@+id/fblogin_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                facebook:com_facebook_login_text="페이스북으로 로그인하기"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="10dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                />
+</LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:text="처음이신가요?"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:shadowRadius="2.0"
+            android:shadowDx="2.0"
+            android:shadowDy="2.0"
+            android:shadowColor="#000000"
+            />
+
+        <Button
+            android:id="@+id/joinbutton"
+            android:layout_width="100dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center"
+            android:background="@drawable/button"
+            android:onClick="onClick"
+            android:text="회원가입"
+
+            />
+    </LinearLayout>
+</LinearLayout>

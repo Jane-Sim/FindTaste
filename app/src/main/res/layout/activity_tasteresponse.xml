@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cardview_light_background"
+    android:orientation="vertical"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    >
+    <LinearLayout
+        android:id="@+id/uptext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:orientation="horizontal"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight="7"
+            android:gravity="center"
+            app:srcCompat="@drawable/mr_dialog_close_light" />
+
+        <TextView
+            android:id="@+id/tastename"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="50dp"
+            android:padding="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="맛집 이름"
+            android:textColor="@android:color/background_dark"
+            android:textSize="20sp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true" />
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/line"
+        android:layout_below="@id/uptext"
+        android:background="@color/com_facebook_button_border_color_focused"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:gravity="start"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/response"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:text="결과값이 없습니다."
+        android:textColor="@color/cardview_dark_background"
+        android:layout_below="@+id/line"
+        android:visibility="gone"
+        android:background="@color/cardview_light_background"
+        android:layout_alignParentStart="true" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_below="@id/line"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/cardview_light_background"
+        >
+    </android.support.v7.widget.RecyclerView>
+
+</RelativeLayout>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="#f1f1f1"
+    >
+        <LinearLayout
+            android:id="@+id/toplinear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/cardview_light_background"
+            >
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:src="@android:drawable/ic_search_category_default" />
+            <EditText
+                android:id="@+id/autoCompleteTextView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:hint="식당을 검색해보세요"
+                android:background="@color/cardview_light_background"
+                />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/line"
+            android:layout_below="@id/toplinear"
+            android:background="@color/com_facebook_button_border_color_focused"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:gravity="start"
+            android:textStyle="bold"
+            android:text=""/>
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_below="@id/line"
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/cardview_light_background"
+            >
+        </android.support.v7.widget.RecyclerView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:background="#e1665c"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="3"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/cardview_light_background"
+            android:text="찾는 식당이 안 보이시나요?"
+            android:textSize="15sp"/>
+        <Button
+            android:id="@+id/addtaste"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_marginEnd="5dp"
+            android:textColor="@android:color/background_light"
+            android:background="@drawable/buttonground"
+            android:text="식당 등록하기"
+            android:textSize="15sp" />
+    </LinearLayout>
+</RelativeLayout>

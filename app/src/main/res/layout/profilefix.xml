@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/cast_expanded_controller_ad_container_white_stripe_color"
+    android:layout_marginBottom="5dp">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="프로필 편집"
+            android:textSize="20sp"
+            android:gravity="center"/>
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:srcCompat="?android:attr/homeAsUpIndicator" />
+    </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+            <FrameLayout
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="20dp"
+                >
+                <ImageView
+                    android:id="@+id/p_image"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    />
+
+                <ImageView
+                    android:id="@+id/setting"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="right|bottom"
+                    android:src="@drawable/setting" />
+            </FrameLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:textSize="20sp"
+            android:text="이름 *"
+            android:textColor="@android:color/holo_red_dark"/>
+        <EditText
+            android:id="@+id/name"
+            android:maxLines="1"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="20sp"
+            android:background="@color/cast_expanded_controller_ad_container_white_stripe_color"
+            android:hint="findtaste"/>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/line3"
+        android:background="@color/com_facebook_button_border_color_focused"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="start"
+        android:textStyle="bold"
+        android:text=""/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:textSize="20sp"
+            android:text="이메일"/>
+        <EditText
+            android:id="@+id/email"
+            android:maxLines="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="20sp"
+            android:background="@color/cast_expanded_controller_ad_container_white_stripe_color"
+            android:hint="ssiox@naver.com"/>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/line1"
+        android:background="@color/com_facebook_button_border_color_focused"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="start"
+        android:textStyle="bold"
+        android:text=""/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:textSize="20sp"
+            android:text="전화번호"/>
+        <EditText
+            android:id="@+id/number"
+            android:maxLines="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="20sp"
+            android:background="@color/cast_expanded_controller_ad_container_white_stripe_color"
+            android:hint="010-1234-5678"/>
+    </LinearLayout>
+    </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        >
+        <Button
+            android:id="@+id/next"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textColor="@android:color/background_light"
+            android:text="완료"
+            android:textStyle="bold"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+</RelativeLayout>

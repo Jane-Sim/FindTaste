@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/feed_bg"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="@dimen/feed_item_margin"
+        android:background="@drawable/bg_parent_rounded_corner"
+        android:orientation="vertical"
+        android:paddingBottom="10dp"
+        android:paddingTop="@dimen/feed_item_padding_top_bottom">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/feed_item_padding_left_right"
+            android:paddingRight="@dimen/feed_item_padding_left_right">
+
+            <ImageView
+                android:id="@+id/profilePic"
+                android:layout_width="@dimen/feed_item_profile_pic"
+                android:layout_height="@dimen/feed_item_profile_pic"
+                android:layout_weight="0"
+                android:scaleType="fitCenter"
+                android:contentDescription="anyStringValue"
+                app:srcCompat="@drawable/fbnull" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/feed_item_profile_info_padd">
+
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="별명"
+                    android:textColor="@color/cardview_dark_background"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/timestamp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="시간"
+                    android:textColor="@color/timestamp"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <RatingBar
+                android:id="@+id/ratingBar"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:isIndicator="true"
+                android:progressTint="#d84c4c"
+                android:backgroundTint="#dcdada"
+                android:max="5"
+                android:numStars="5"
+                android:rating="5"
+                android:stepSize="1" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/foodName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="5dp"
+            android:paddingLeft="@dimen/feed_item_status_pad_left_right"
+            android:paddingRight="@dimen/feed_item_status_pad_left_right"
+            android:paddingTop="@dimen/feed_item_status_pad_top"
+            android:text="맛집이름"
+            android:textSize="15sp"
+            android:textColor="#d84c4c" />
+
+        <TextView
+            android:id="@+id/txtStatusMsg"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="4"
+            android:paddingLeft="@dimen/feed_item_status_pad_left_right"
+            android:paddingRight="@dimen/feed_item_status_pad_left_right"
+            android:paddingTop="@dimen/feed_item_status_pad_top"
+            android:text="적은 내용입니다"
+            android:textSize="15sp"
+            android:textColor="@color/cardview_dark_background" />
+
+        <LinearLayout
+            android:id="@+id/layout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <HorizontalScrollView
+                android:id="@+id/hori"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:visibility="gone"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/feed_item_padding_left_right"
+            android:paddingRight="@dimen/feed_item_padding_left_right">
+
+            <TextView
+                android:id="@+id/like"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="좋아요 " />
+
+            <TextView
+                android:id="@+id/likenum"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:text="0개" />
+
+            <TextView
+                android:id="@+id/comment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="댓글 " />
+
+            <TextView
+                android:id="@+id/cmnum"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="0개" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/com_facebook_button_border_color_focused"
+
+            android:gravity="start"
+            android:text=""
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:weightSum="10">
+
+            <ImageView
+                android:id="@+id/heart"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="2"
+                android:scaleType="fitCenter"
+                android:contentDescription="anyStringValue"
+                android:src="@drawable/nullheart" />
+
+            <ImageView
+                android:id="@+id/talk"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="8"
+                android:contentDescription="anyStringValue"
+                android:scaleType="fitStart"
+                android:src="@drawable/nulltalk" />
+
+            <ImageView
+                android:id="@+id/junm"
+                android:layout_width="35dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                android:paddingRight="10dp"
+                android:foregroundGravity="right"
+                android:scaleType="fitCenter"
+                android:contentDescription="anyStringValue"
+                android:src="@drawable/junm" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
